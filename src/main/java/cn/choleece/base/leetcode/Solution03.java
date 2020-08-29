@@ -10,7 +10,7 @@ import java.util.Set;
  * @Description: TODO
  * @Date 2020-01-28 23:11
  **/
-public class Solution3 {
+public class Solution03 {
 
     public static int lengthOfLongestSubstring(String s) {
         if (s == null || s.length() < 1) {

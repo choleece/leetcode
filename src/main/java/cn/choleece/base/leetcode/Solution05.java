@@ -5,7 +5,7 @@ package cn.choleece.base.leetcode;
  * @Description: TODO
  * @Date 2020-01-29 20:09
  **/
-public class Solution5 {
+public class Solution05 {
 
     public static String longestPalindrome(String s) {
         if (s == null || s.length() < 1) {
