@@ -29,14 +29,7 @@ public class ListNode {
     }
 
     public static ListNode initList(List<Integer> nums) {
-        ListNode head = new ListNode(-1);
-        ListNode p = head;
-        for (int num : nums) {
-            ListNode tmp = new ListNode(num);
-            p.next = tmp;
-            p = tmp;
-        }
-        return head;
+        return initList(nums, -1);
     }
 
     public static ListNode initList(List<Integer> nums, int headVal) {
@@ -47,6 +40,6 @@ public class ListNode {
             p.next = tmp;
             p = tmp;
         }
-        return head;
+        return head.next;
     }
 }

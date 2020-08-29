@@ -158,4 +158,51 @@ public static void recursionDfs(TreeNode root, Set<TreeNode> visitedSet) {
         }
     }
 }
+
+/**
+ * 反转链表
+ * @param head
+ * @return
+ */
+public static ListNode reverseList(ListNode head) {
+    if (head == null || head.next == null) {
+        return head;
+    }
+
+    ListNode dummyHead = new ListNode(-1);
+    dummyHead.next = head;
+
+    ListNode prev = head;
+    ListNode pCur;
+    while((pCur = prev.next) != null) {
+        prev.next = pCur.next;
+        pCur.next = dummyHead.next;
+        dummyHead.next = pCur;
+    }
+
+    return dummyHead.next;
+}
+
+/**
+ * 反转链表
+ * @param head
+ * @return
+ */
+public static ListNode reverseList1(ListNode head) {
+    if (head == null || head.next == null) {
+        return head;
+    }
+
+    ListNode dummyHead = new ListNode(-1);
+
+    ListNode p = head;
+    while(p != null) {
+        ListNode q = p.next;
+        p.next = dummyHead.next;
+        dummyHead.next = p;
+        p = q;
+    }
+
+    return dummyHead.next;
+}
 ```
