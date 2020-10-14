@@ -1,13 +1,11 @@
 package cn.choleece.base.leetcode;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * @author choleece
- * @Description: TODO
+ * @Description: 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度
  * @Date 2020-01-28 23:11
  **/
 public class Solution03 {
@@ -17,27 +15,27 @@ public class Solution03 {
             return 0;
         }
 
+        int maxLength = 0;
         char[] chars = s.toCharArray();
-
-        HashMap<Character, Integer> map = new HashMap<>();
-        // pre为最近出现重复字符的位置
-        int pre = -1;
-        int max = 0;
-        for (int i = 0; i < chars.length; i++) {
-           Integer idx = map.get(chars[i]);
-           if (idx != null) {
-               pre = Math.max(pre, idx);
-           }
-
-           max = Math.max(max, i - pre);
-           map.put(chars[i], i);
+        Map<Character, Integer> preChars = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            int lastIdx = preChars.getOrDefault(chars[i], -1);
+            if (lastIdx >= 0) {
+                maxLength = Math.max(maxLength, preChars.size());
+                preChars.clear();
+                for (int j = lastIdx; j <= i; j++) {
+                    preChars.put(chars[j], j);
+                }
+            } else {
+                preChars.put(chars[i], i);
+            }
         }
-
-        return max;
+        maxLength = Math.max(maxLength, preChars.size());
+        return maxLength;
     }
 
     public static void main(String[] args) {
-        String s = "pwwkew";
+        String s = "acfd";
         System.out.println(lengthOfLongestSubstring(s));
     }
 }

@@ -1,6 +1,10 @@
 ## 递归 回溯 分治 贪心算法
 [!参考](https://www.cnblogs.com/chaojunwang-ml/p/11240548.html)
 
+回溯(递归) -> 重复计算
+贪心 -> 永远局部最优
+DP -> 记录局部最优子结构/多种记录值
+
 ### 递归 recursion
 
 ```
@@ -54,9 +58,17 @@ def divide_conquer(problem, param1, param2, ...):
     result = process_result(sub_result1, sub_result2, ...)
 
 ### 动态规划  dynamic program
+```
 1. 建立状态转移方程
 2. 缓存并复用以往结果
 3. 按顺序从小到大算
+
+或者
+1. 递归 + 记忆化 -> 递推
+2. 状态的定义: opt[n]、dp[n]、fib[n]
+3. 状态转移方程: opt[n] = best_of(opt[n - 1], opt[n - 2], ...)
+4. 最优子结构
+```
 
 ### DFS & BFS
 
