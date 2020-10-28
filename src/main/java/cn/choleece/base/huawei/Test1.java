@@ -1,5 +1,6 @@
 package cn.choleece.base.huawei;
 
+import java.util.LinkedList;
 import java.util.Scanner;
 
 /**
@@ -14,5 +15,7 @@ public class Test1 {
         String[] words = str.split(" ");
         int len = words.length;
         System.out.println(words[len-1].length());
+
+        LinkedList linkedList = new LinkedList();
     }
 }

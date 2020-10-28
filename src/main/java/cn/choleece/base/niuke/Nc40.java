@@ -85,7 +85,7 @@ public class Nc40 {
         ListNode root1 = ListNode.initList(Arrays.asList(5), 1);
         ListNode root2 = ListNode.initList(Arrays.asList(5), 1);
 
-        ListNode.loopList(addInList(root1, root2));
+        ListNode.loopList(reverseList(addInList(root1, root2)));
     }
 
 }
